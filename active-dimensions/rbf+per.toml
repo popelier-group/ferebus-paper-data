@@ -1,0 +1,25 @@
+[system]
+name = "ACTIVE_DIM"
+natoms = 1
+atoms = [{name="X1", alf=[1, 2, 3]}]
+properties = ["y"]
+
+[model]
+mean = "constant"
+optimiser = "pso"
+kernel = "k1+k2"
+
+[optimiser.pso]
+swarm_size = 50
+iterations = 100
+inertia_weight = 0.789
+cognitive_learning_rate = 1.494
+social_learning_rate = 1.494
+
+[kernels.k1]
+type = "rbf"
+active_dimensions = [1]
+
+[kernels.k2]
+type = "periodic"
+active_dimensions = [2]
